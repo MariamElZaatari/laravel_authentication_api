@@ -11,6 +11,6 @@ class Message extends Model
     use HasFactory, Notifiable;
 
     protected $fillable = [
-        'email', 'password', 'first_name', 'last_name', 'phone', 'gender', 'age',
+        'email', 'subject', 'text',
     ];
 }
