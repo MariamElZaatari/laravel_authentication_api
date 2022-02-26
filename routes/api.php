@@ -26,3 +26,8 @@ Route::group([
 });
 
 Route::post('/message/create', [MessageController::class, 'create']);
+
+Route::middleware('auth')->group(function () {
+    Route::patch('/user/update', [UserController::class, 'update']);
+    Route::delete('/user/delete/{id}', [UserController::class, 'delete']);
+});
