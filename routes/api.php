@@ -25,9 +25,9 @@ Route::group([
     Route::post('/login', [AuthController::class, 'login']);
 });
 
-Route::post('/message/create', [MessageController::class, 'create']);
+Route::post('/message', [MessageController::class, 'create']);
 
 Route::middleware('auth')->group(function () {
-    Route::patch('/user/update', [UserController::class, 'update']);
-    Route::delete('/user/delete/{id}', [UserController::class, 'delete']);
+    Route::patch('/user', [UserController::class, 'update']);
+    Route::delete('/user/{id}', [UserController::class, 'delete']);
 });
