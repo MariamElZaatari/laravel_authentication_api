@@ -43,7 +43,7 @@ class AuthController extends Controller
             'last_name' => 'required|string|alpha|between:2,100',
             'phone'=>'required|string|size:8|regex:/^[0-9]+$/',
             'gender' => 'required|string|between:0,1',
-            'age' => 'required|numeric|integer|min:12',
+            'age' => 'required|numeric|integer|min:12|max:99',
         ]);
 
         if ($validator->fails()) {

@@ -14,11 +14,11 @@ class UserController extends Controller
         if (auth()->user()->id == $request->id) {
             $validator = Validator::make($request->all(), [
                 'id' => 'required|integer',
-                'first_name' => 'required|string|between:2,100',
-                'last_name' => 'required|string|between:2,100',
-                'phone' => 'required|string|size:8',
+                'first_name' => 'required|string|alpha|between:2,100',
+                'last_name' => 'required|string|alpha|between:2,100',
+                'phone' => 'required|string|size:8|regex:/^[0-9]+$/',
                 'gender' => 'required|string|between:0,1',
-                'age' => 'required|integer',
+                'age' => 'required|numeric|integer|min:12|max:99',
             ]);
 
             if ($validator->fails()) {
