@@ -22,7 +22,7 @@ class AuthController extends Controller
         // Validate Request
         $validator = Validator::make($request->all(), [
             'email' => 'required|email',
-            'password' => 'required|string|min:8',
+            'password' => 'required|string|min:6',
         ]);
 
         // If validator fails, json encode error with status
