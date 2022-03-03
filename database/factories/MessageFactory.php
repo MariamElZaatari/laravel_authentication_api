@@ -13,6 +13,7 @@ class MessageFactory extends Factory
      */
     public function definition()
     {
+        // Create Messages using Faker
         return [
             'email' => $this->faker->safeEmail,
             'subject' => $this->faker->text(20),

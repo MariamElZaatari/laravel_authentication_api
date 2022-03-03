@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        // Create 10 users and 10 messages using factory
         User::factory(10)->create();
         Message::factory(10)->create();
     }

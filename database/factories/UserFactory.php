@@ -22,6 +22,7 @@ class UserFactory extends Factory
      */
     public function definition()
     {
+        // Create Users using Faker
         $gender = $this->faker->randomElement(['m', 'f']);
 
         return [
@@ -29,9 +30,9 @@ class UserFactory extends Factory
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             'first_name'=>$this->faker->name,
             'last_name'=>$this->faker->name,
-            'phone'=>$this->faker->numerify('##-######'),
+            'phone'=>$this->faker->numerify('########'),
             'gender'=>$gender,
-            'age'=>$this->faker->numberBetween(18,100),
+            'age'=>$this->faker->numberBetween(12,99),
         ];
     }
 }
