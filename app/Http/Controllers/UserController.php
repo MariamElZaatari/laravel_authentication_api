@@ -11,7 +11,7 @@ class UserController extends Controller
     // --------- Update Method -----------
     public function update(Request $request)
     {
-        // Check if user is authenticated to update info
+        // Check if user is authorized to update info
         if (auth()->user()->id == $request->id) {
             // Validate Request
             $validator = Validator::make($request->all(), [
@@ -42,7 +42,7 @@ class UserController extends Controller
             ], 202);
         }
 
-        // if user not authenticated to update
+        // if user not authorized to update
         return response()->json([
             'message' => 'Not Authorized',
         ], 401);
@@ -53,7 +53,7 @@ class UserController extends Controller
     // --------- Delete Method -----------
     public function delete($id)
     {
-        // Check if user is authenticated to delete account
+        // Check if user is authorized to delete account
         if (auth()->user()->id == $id) {
             
             //Select * from user where id=$id
@@ -68,7 +68,7 @@ class UserController extends Controller
             ], 202);
         }
 
-        // if user not authenticated to delete
+        // if user not authorized to delete
         return response()->json([
             'message' => 'Not Authorized',
         ], 401);
